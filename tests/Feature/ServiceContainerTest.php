@@ -11,7 +11,7 @@ class ServiceContainerTest extends TestCase
 {
     public function testDependencyInjection() {
         $foo = $this->app->make(Foo::class);
+        self::assertEquals() 
     }
 
-    self::assertEquals()
 }

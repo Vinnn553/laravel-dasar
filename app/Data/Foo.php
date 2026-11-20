@@ -3,7 +3,7 @@
 namespace App\Data;
 
 class Foo {
-    function foo(): string {
+   public function foo(): string {
         return "Foo";
     }
 }
