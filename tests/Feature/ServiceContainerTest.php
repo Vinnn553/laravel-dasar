@@ -25,4 +25,21 @@ class ServiceContainerTest extends TestCase
 
         self::assertEquals('Kelvin', $person->firstName);
     }
+
+    public function testSingleton() {
+        $this->app->singleton(Person::class, function ($app) {
+            return new Person('Kelvin', 'Agusto');
+        });
+
+        $person = $this->app->make(Person::class);
+
+        self::assertEquals('Kelvin', $person->firstName);
+    }
+
+    public function testInstance() {
+        $person = new Person('Kelvin', 'Agusto'); 
+        $this->app->instance(Person::class, $person);
+
+        self::assertEquals('Kelvin', $person->firstName);
+    }
 }

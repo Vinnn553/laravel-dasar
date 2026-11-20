@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/pzn", function () {
+    return "Kelvin Agusto";
+});
+
+Route::fallback(function () {
+    return "404";
+});
+
+
+Route::get('/hello', function () {
+    return view('hello', ['name' => 'Kelvin']);
+});
